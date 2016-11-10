@@ -1,0 +1,29 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  position: relative;
+}
+.banner h1 {
+  padding-top: 80px;
+  font-size: 165px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: rgba(254, 254, 254, 0.8);
+  font-family: 'Syncopate', sans-serif;
+}
+.banner table {
+  position: absolute;
+  top: 350px;
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(235, 235, 235, 0.8);
+  margin-bottom: 20px;
+}
+.banner .btn-lg {
+  position: absolute;
+  bottom: 200px;
+  left: 200px;
+}

@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  before_action :set_dose, only: [:show, :edit, :update, :destroy]
+  before_action :set_cocktail, only: [ :new, :create, :destroy ]
 
   # GET /doses
   def index
@@ -22,24 +22,16 @@ class DosesController < ApplicationController
   # POST /doses
   def create
     @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
 
     if @dose.save
-      redirect_to @dose, notice: 'Dose was successfully created.'
+      redirect_to @cocktail, notice: 'Dose was successfully created.'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /doses/1
-  def update
-    if @dose.update(dose_params)
-      redirect_to @dose, notice: 'Dose was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /doses/1
+  # DELETE /doeses/1
   def destroy
     @dose.destroy
     redirect_to doses_url, notice: 'Dose was successfully destroyed.'
@@ -47,8 +39,8 @@ class DosesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_dose
-      @dose = Dose.find(params[:id])
+    def set_cocktail
+      @cocktail = Cocktail.find(params[:cocktail_id])
     end
 
     # Only allow a trusted parameter "white list" through.
