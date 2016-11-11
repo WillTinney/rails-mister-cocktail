@@ -58,3 +58,6 @@ gem 'autoprefixer-rails'
 
 # Rails/Rake Testing
 gem 'rails-controller-testing'
+
+# Security
+gem 'figaro'
